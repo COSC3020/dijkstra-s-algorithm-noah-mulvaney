@@ -29,7 +29,7 @@ const test = function () {
         graph2[i][i] = 0;
 
     // Test Dijkstra's with random graph
-    let source = Math.floor(Math.random * numV);
+    let source = Math.floor(Math.random() * numV);
     let paths = dijkstra(graph2, source);
     for (let i = 0; i < numV; i++) {
         let last = paths[i].length - 1;
