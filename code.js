@@ -50,7 +50,7 @@ function dijkstra(graph, sourceNode) {
     paths[sourceNode] = [sourceNode];
     dist[sourceNode] = 0;
     
-    for (let i = 0; i < graph.length; i++) {
+    for (let i = 0; i < graph.length && current != undefined; i++) {
         // mark current node
         marked.push(current);
 
