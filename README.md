@@ -24,3 +24,7 @@ inefficient.
 
 What is the big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+### My Analysis
+
+My implementation uses two loops. The outer loop runs while unmarked nodes remain, generally equal to the number of vertices, since one node is marked each iteration. Within the outer loop, an inter loop iterates over all the nodes checking for edges. Also within the outer loop, I call the findMin() function to identify the next vertex. The findMin() function has a complexity of $\Theta(|V|^2)$, though this could be improved if I used a better data structure. This results in a overall asymptotic complexity of $\Theta(|V|^3)$.

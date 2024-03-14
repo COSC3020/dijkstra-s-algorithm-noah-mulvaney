@@ -50,19 +50,19 @@ function dijkstra(graph, sourceNode) {
     paths[sourceNode] = [sourceNode];
     dist[sourceNode] = 0;
     
-    for (let i = 0; i < graph.length && current != undefined; i++) {
+    for (let i = 0; i < graph.length && current != undefined; i++) { // iterates V times
         // mark current node
         marked.push(current);
 
         // update distances
-        for (let j = 0; j < graph.length; j++)
+        for (let j = 0; j < graph.length; j++) // V times
             if (graph[current][j] && dist[j] > dist[current] + graph[current][j]) {
                 dist[j] = dist[current] + graph[current][j];
                 paths[j] = [paths[current], j];
             }
         
         // find next node
-        current = findMin(dist, marked);
+        current = findMin(dist, marked); // V^2 complexity
     }
 
     return flatten(paths);
