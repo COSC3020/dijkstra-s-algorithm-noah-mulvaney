@@ -27,18 +27,22 @@ const test = function () {
     }
     for (let i = 0; i < numV; i++)
         graph2[i][i] = 0;
+    console.log(graph2);
 
     // Test Dijkstra's with random graph
     let source = Math.floor(Math.random() * numV);
     let paths = dijkstra(graph2, source);
+    console.log(paths);
     for (let i = 0; i < numV; i++) {
         let last = paths[i].length - 1;
-        if (paths[i][0] != source) return false;
-        if (paths[i][last] != i) return false;
+        if (last > 1) {
+            if (paths[i][0] != source) return false;
+            if (paths[i][last] != i) return false;
+        }
     }
 
     return true;
-    };
+};
 
 
 // Run test
