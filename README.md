@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2Wy-Iis-)
 # Dijkstra's Algorithm
 
 Recall the pseudocode for Dijkstra's algorithm:
@@ -23,3 +24,7 @@ inefficient.
 
 What is the big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+### My Analysis
+
+My implementation uses two loops. The outer loop runs while unmarked nodes remain, generally equal to the number of vertices, since one node is marked each iteration. Within the outer loop, an inter loop iterates over all the nodes checking for edges. Also within the outer loop, I call the findMin() function to identify the next vertex. The findMin() function has a complexity of $\Theta(|V|^2)$, though this could be improved if I used a better data structure. This results in a overall asymptotic complexity of $\Theta(|V|^3)$.
