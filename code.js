@@ -6,21 +6,14 @@
 
 // Credit: Online resources
 //      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
-
-// Find whether a given value exists in a list
-function find(list, value) {
-    for (let i = 0; i < list.length; i++) 
-        if (list[i] == value) return true;
-    return false;
-}
-
+//      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 
 // Find the unmarked node with the lowest distance
 function findMin(dist, unmarked) {
     let index;
     let min = Infinity;
     for (let i = 0; i < dist.length; i++) 
-        if (find(unmarked, i) && dist[i] < min) {
+        if (unmarked.indexOf(i) != -1 && dist[i] < min) {
             index = i;
             min = dist[i];
         }
