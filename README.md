@@ -27,4 +27,4 @@ answer, including your reasoning, to this markdown file.
 
 ### My Analysis
 
-My implementation uses two loops. The outer loop runs while unmarked nodes remain, generally equal to the number of vertices, since one node is marked each iteration. Within the outer loop, an inter loop iterates over all the nodes checking for edges. Also within the outer loop, I call the findMin() function to identify the next vertex. The findMin() function has a complexity of $\Theta(|V|^2)$, though this could be improved if I used a better data structure. This results in a overall asymptotic complexity of $\Theta(|V|^3)$.
+My implementation uses a loop of V iterations to set the initial distances and paths. It also uses two nested loops to do the main work. The outer loop runs V times and contains the inner loop and a call of `findMin()` which has a complexity of $|V|$, assuming `.indexOf()` does a constant amount of work. The inner loop runs also runs V times. The `flatten()` function has a complexity of $n$. This results in a complexity of $T(|V|) \approx |V| + |V| (|V| + |V|) + |V|$. So $T(|V|) \in \Theta(|V|^2)$.
