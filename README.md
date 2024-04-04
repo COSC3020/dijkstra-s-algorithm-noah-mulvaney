@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2Wy-Iis-)
 # Dijkstra's Algorithm
 
 Recall the pseudocode for Dijkstra's algorithm:
@@ -23,3 +24,7 @@ inefficient.
 
 What is the big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+### My Analysis
+
+My implementation uses a loop of V iterations to set the initial distances and paths. It also uses two nested loops to do the main work. The outer loop runs V times and contains the inner loop and a call of `findMin()` which has a complexity of $|V|$, assuming `.indexOf()` does a constant amount of work. The inner loop runs also runs V times. The `flatten()` function has a complexity of $n$. This results in a complexity of $T(|V|) \approx |V| + |V| (|V| + |V|) + |V|$. So $T(|V|) \in \Theta(|V|^2)$.
